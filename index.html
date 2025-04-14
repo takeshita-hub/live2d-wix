@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>Live2D</title>
+  <title>Live2D Hiyori</title>
   <style>
     html, body {
       margin: 0;
@@ -32,7 +32,7 @@
 
     const loadModel = async () => {
       const model = await PIXI.live2d.Live2DModel.from(
-        "./hiyori_pro_t11.model3.json",  // モデルファイルのパス
+        "./hiyori_pro_t11.model3.json",
         { autoInteract: true }
       );
 
@@ -50,7 +50,7 @@
         }
       });
 
-      // 読み上げ用（iframeからメッセージを受け取る）
+      // 音声読み上げ（SpeechSynthesis）
       window.addEventListener("message", (event) => {
         const text = event.data;
         const synth = window.speechSynthesis;
